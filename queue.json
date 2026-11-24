@@ -11,10 +11,7 @@
   "hook": "He was celebrating 3 seconds ago",
   "duration_s": 38.5,
   "added_at": "2026-11-24T10:05:26+00:00",
-  "pending": [
-   "instagram",
-   "youtube_shorts"
-  ],
+  "pending": [],
   "texts": {
    "instagram": {
     "title": "",
@@ -25,7 +22,10 @@
     "text": "He was celebrating 3 seconds ago @asianjeff\n#ad #AsianJeff #gta6 #gta6clips #gaming #shorts"
    }
   },
-  "posts": {}
+  "posts": {
+   "youtube_shorts": "https://www.youtube.com/shorts/M0M24Niv13U",
+   "instagram": "https://www.instagram.com/reel/DgHy-j8gJqb/"
+  }
  },
  {
   "clip_id": "asianjeff_2933231152_c14",
