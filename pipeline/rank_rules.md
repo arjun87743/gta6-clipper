@@ -15,14 +15,25 @@ Clips ranked by the scheduled run are posted with no human check, so when in dou
 - Chat reacting (W spam, LMAO, "no way") confirms something happened, but is not enough alone.
 - 8 to 10: post-worthy as is. 6 to 7: usable with a strong hook. 5 or below: reject.
 
+## Chat is never shown in the clip
+The render crops the stream's chat overlay out of the frame, and the "### Chat" lines in the packet
+come from the Twitch chat log, not from the video. Viewers of the clip never see chat. So:
+- Use chat only as a signal that something happened and how big it was.
+- Never reject or lower a score because of what chat says: troll lines, insults, spoilers, sexual or
+  violent comments typed by viewers do not appear in the clip.
+- Judge only what the viewer will see and hear: the streamer's own words and reaction, and the game.
+
 ## Reject (keep = false) when
-- Story spoilers: names of characters dying or betraying, mission outcomes, ending talk. This includes
-  spoilers in chat lines that are visible in the burned-in chat overlay.
+- Story spoilers said by the streamer or shown in the game: names of characters dying or betraying,
+  mission outcomes, ending talk.
 - Mostly cutscene or in-game TV/radio, cheats, exploits or mod menus (Rockstar policy).
-- Nothing happens: menus, idle driving, reading chat, greetings, sponsor or merch talk.
+- Nothing happens: menus, idle driving, reading chat out loud with no reaction, greetings, sponsor or
+  merch talk.
 - Talk about leaks or unreleased content.
-- Sexual comments about characters, chat pushing violence against a person, in-game radio music.
-- Anything that shows the streamer in a negative light: rage, drama, mocking his skill.
+- The streamer himself makes sexual comments about characters or encourages violence against a person;
+  in-game radio music.
+- The streamer in a clearly negative light: real rage at someone, drama, slurs. Self-deprecating jokes
+  about his own driving or aim are fine and often the best clips.
 - Score 5 or below.
 
 ## Boundaries
