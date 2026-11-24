@@ -4,7 +4,7 @@ name: Post clips
 # up to the daily cap, with a minimum gap between posts on each platform.
 on:
   schedule:
-    - cron: "3 * * * *"
+    - cron: "7 * * * *"
   workflow_dispatch:
     inputs:
       now:
