@@ -2,3 +2,4 @@
 {"at": "2026-11-24T10:59:21+00:00", "event": "post", "platform": "youtube_shorts", "clip_id": "asianjeff_2933231152_c12", "ok": true}
 {"at": "2026-11-24T11:00:05+00:00", "event": "post", "platform": "instagram", "clip_id": "asianjeff_2933231152_c12", "ok": true}
 {"at": "2026-11-24T11:00:05+00:00", "event": "notify", "title": "Submit now: asianjeff_2933231152_c12 (2 posts)"}
+{"at": "2026-11-24T17:12:48+00:00", "event": "process_failed", "vod_id": "2936885848", "error": "Command '['/opt/hostedtoolcache/Python/3.11.18/x64/bin/python', 'pipeline/autorank.py', '--campaign', 'asianjeff', '--vod-id', '2936885848']' returned non-zero exit status 1."}
