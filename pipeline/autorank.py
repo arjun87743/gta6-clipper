@@ -100,6 +100,9 @@ def main():
     print(f"ranked: {len(kept)} kept, {len(r['clips']) - len(kept)} rejected, {len(dropped)} auto-dropped")
     for m in dropped:
         print("  dropped", m)
+    for c in r["clips"]:  # one line per decision, so a run log explains what was kept or rejected
+        print(f"  {'KEEP' if c.get('keep') else 'skip'} {c.get('id', c.get('clip_id', '?'))} "
+              f"score={c.get('score')} {str(c.get('reason', ''))[:160]}")
 
 
 if __name__ == "__main__":
