@@ -1,0 +1,89 @@
+# AsianJeff GTA 6 playthrough campaign (Reach, Content Rewards).
+# Snapshot from the brief, 2026-11-18. Budgets and rules change daily:
+# re-check the campaign page before posting and update the TODO fields below.
+
+id: asianjeff
+name: AsianJeff GTA 6 playthrough
+network: Reach
+campaign_url: https://contentrewards.com/c/campaigns/bbd3a963-9a23-457c-bc15-6697971d9902
+rules_url: https://reachclipping.com/AsianJeff  # read 2026-11-23 after joining (joined as Arjun on Content Rewards)
+
+source:
+  platform: twitch
+  channel: asianjeff
+  vod_filter: "GTA 6"  # only use streams whose title mentions GTA 6 (his other streams are Fortnite)
+
+platforms: [instagram, youtube_shorts, x]  # no TikTok: banned in India, no account (removed 2026-11-23)
+
+# Automatic posting (pipeline/autopost.py). X stays manual: its API charges for posting.
+autopost:
+  platforms: [youtube_shorts, instagram]
+  per_day: 2               # clips per day per platform
+  min_gap_hours: 6         # between two posts on the same platform
+  post_hours_ist: [20, 7]  # 20:00 and 07:00 IST = US evening and US late night (audience must be 50% US/CA/UK/AU/NZ)
+  avoid_same_angle_back_to_back: true
+
+pay:
+  cpm_usd: 1.00
+  min_per_clip_usd: 10
+  max_per_clip_usd: 300
+  budget_usd: 2500
+  type: cpm  # not a pool campaign
+
+caption:
+  disclosure_overlay: "Ad"        # on-screen at the very start of every clip
+  disclosure_caption: "#ad"
+  required_text: ""               # none required (rules checked 2026-11-23); captions in English only
+  required_hashtags: ["#AsianJeff"]  # the only required tag (rules page 2026-11-23)
+  mention: "@asianjeff"           # confirm handle per platform on the campaign page
+  extra_hashtags: ["#gta6", "#gta6clips", "#gaming"]  # our own discovery tags, after the required ones
+
+rules:
+  facecam_required: true
+  min_clip_s: 15
+  max_clip_s: 60
+  submit_within_minutes: 30
+  min_views_for_payout: 10000      # MVR: no payout until a clip passes 10k views and is approved
+  source_from: "2026-11-19"        # only his GTA 6 playthrough from Nov 19 onwards counts
+  audience: "at least 50% from USA, CA, AU, UK, NZ"
+  no_logos: true                   # logos of any kind are not allowed (no channel watermark)
+  no_negative_portrayal: true      # never show AsianJeff in a negative light; no rage bait or drama framing
+  no_repetitive_thumbnails: true   # covers must match the clip and vary
+
+# M6 edit layer. A missing flag counts as false.
+# Verified 2026-11-23 against reachclipping.com/AsianJeff: sounds, music and overlays are not
+# restricted. Logos are banned, and AI-generated content is banned (our edits use real footage only).
+edit:
+  rules_verified: true
+  allow_sfx: true       # our own synthesised sounds
+  allow_music: false    # music is added in-app when posting
+  allow_overlays: true  # hook text and reaction outro (Ad label and captions always stay)
+
+# Pixel boxes measured on the 1280x720 VOD 2933231152 (2026-11-19).
+# Scale proportionally if a different resolution is downloaded.
+layout:
+  source_resolution: [1280, 720]
+  facecam:
+    normal: {x: 0, y: 216, w: 322, h: 242}     # most of the stream
+    large: {x: 0, y: 210, w: 395, h: 228}      # used early in the stream (before about 0:40) and some cutscenes; render.py detects which
+  # Boxes he switches to mid-clip. Only the edit layer follows switches (first seen in clip #13 at 20 s).
+  facecam_switch:
+    small: {x: 8, y: 269, w: 301, h: 169}
+  # Areas to keep OUT of the gameplay crop: stream chat overlay (can show spoilers,
+  # e.g. "Lucia dies" was visible at 0:20:00) and his "Rice today" counter.
+  exclude:
+    chat_overlay: {x: 915, y: 0, w: 365, h: 100}
+    rice_counter: {x: 0, y: 470, w: 230, h: 50}
+  # The gameplay crop is computed per layout in pipeline/render.py (right of the facecam,
+  # below the chat overlay, centred on the screen middle).
+
+# Signals that a moment is a cutscene (reject as standalone content, hard rule 8):
+cutscene_signals:
+  - letterbox bars (black top and bottom)   # reliable; used by pipeline/detect.py
+  - in-game subtitles centred near the bottom
+  - facecam switches to the larger box       # only sometimes, do not rely on it alone
+
+# Candidate detection settings (pipeline/detect.py). Anything not set uses the defaults there.
+detect:
+  skip_start_s: 240   # first 4 minutes are "hi chat" greetings, not moments
+  skip_end_s: 240     # last 4 minutes are goodnight / "W" for the stream, not moments

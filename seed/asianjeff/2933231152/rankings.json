@@ -1,0 +1,193 @@
+{
+ "vod_id": "2933231152",
+ "campaign": "asianjeff",
+ "ranked_by": "claude-code-session + Arjun review",
+ "ranked_at": "2026-11-23",
+ "note": "Seed: the 8 clips Arjun approved before the move to GitHub Actions. Rendered and posted without re-ranking.",
+ "clips": [
+  {
+   "candidate_rank": 12,
+   "score": 8,
+   "start": 3587.5,
+   "end": 3624.0,
+   "summary": "Takes off in a seaplane ('W chat, did I just full box it'), then loses control and panics: 'how do I slow it down chat?', engine damaged.",
+   "hooks": [
+    "He was celebrating 3 seconds ago",
+    "How do I slow it down, chat?",
+    "Fortnite pro tries to fly in GTA 6"
+   ],
+   "hook_text": "He was celebrating 3 seconds ago",
+   "punchline_ts": 3609.7,
+   "mood": "fail",
+   "outro_type": "reaction_freeze",
+   "reaction_ts": 3610.0,
+   "outro_text": "pilot era loading",
+   "angle": "flying",
+   "violence_early_risk": false,
+   "keep": true,
+   "spoiler_risk": false,
+   "reason": "Approved by Arjun on the review page, 2026-11-23 (final version settings baked in)."
+  },
+  {
+   "candidate_rank": 14,
+   "score": 8,
+   "start": 12398.5,
+   "end": 12429.0,
+   "summary": "He rates Jason's physique, then shows chat his own and asks how his six pack compares.",
+   "hooks": [
+    "Streamer vs GTA 6 protagonist: who's built better?",
+    "Me and Jason are so alike",
+    "Rate his six pack vs Jason's"
+   ],
+   "hook_text": "Me and Jason are so alike",
+   "punchline_ts": 12423.5,
+   "mood": "funny",
+   "outro_type": "reaction_zoom",
+   "reaction_ts": 12412.7,
+   "outro_text": "basically twins",
+   "angle": "physique",
+   "violence_early_risk": false,
+   "keep": true,
+   "spoiler_risk": false,
+   "reason": "Approved by Arjun on the review page, 2026-11-23 (final version settings baked in)."
+  },
+  {
+   "candidate_rank": 1,
+   "score": 7,
+   "start": 7802.5,
+   "end": 7846.0,
+   "summary": "Mid-chase panic ending with him losing the cops: 'Let's go! W's in the chat!'",
+   "hooks": [
+    "Fortnite player escapes GTA 6 cops",
+    "'Brian, I got it' (did he though?)",
+    "W's in the flippin' chat"
+   ],
+   "hook_text": "Fortnite player escapes GTA 6 cops",
+   "punchline_ts": 7833.9,
+   "mood": "hype",
+   "outro_type": "reaction_replay",
+   "reaction_ts": 7834.0,
+   "outro_text": "W in the chat",
+   "angle": "chase",
+   "violence_early_risk": false,
+   "keep": true,
+   "spoiler_risk": false,
+   "reason": "Approved by Arjun on the review page, 2026-11-23 (final version settings baked in)."
+  },
+  {
+   "candidate_rank": 4,
+   "score": 7,
+   "start": 2630.5,
+   "end": 2675.0,
+   "summary": "'Controller is actually hard', then 'What's R3? I'm scared bro', chat: 'please tell me you're trolling'.",
+   "hooks": [
+    "What's R3, chat?",
+    "PC gamer holds a controller for the first time",
+    "Chat thought he was trolling. He wasn't."
+   ],
+   "hook_text": "What's R3, chat?",
+   "punchline_ts": 2666.1,
+   "mood": "funny",
+   "outro_type": "reaction_freeze",
+   "reaction_ts": 2660.9,
+   "outro_text": "R3 = right stick",
+   "angle": "controller struggle",
+   "violence_early_risk": false,
+   "keep": true,
+   "spoiler_risk": false,
+   "reason": "Approved by Arjun on the review page, 2026-11-23 (final version settings baked in)."
+  },
+  {
+   "candidate_rank": 5,
+   "score": 7,
+   "start": 11576.5,
+   "end": 11631.0,
+   "summary": "Tutorial prompt confuses him, he loses the target, begs for a restart, then 'Oh my god, I'm back!'",
+   "hooks": [
+    "Please tell me there's a restart",
+    "What does L3 and R3 even mean?",
+    "He thought he failed the mission"
+   ],
+   "hook_text": "Please tell me there's a restart",
+   "punchline_ts": 11629.9,
+   "mood": "hype",
+   "outro_type": "reaction_replay",
+   "reaction_ts": 11629.7,
+   "outro_text": "he's so back",
+   "angle": "controller struggle",
+   "violence_early_risk": false,
+   "keep": true,
+   "spoiler_risk": false,
+   "reason": "Approved by Arjun on the review page, 2026-11-23 (final version settings baked in)."
+  },
+  {
+   "candidate_rank": 11,
+   "score": 6,
+   "start": 6977.5,
+   "end": 7010.0,
+   "summary": "Countdown '3, 2, 1, here we go' for a gate jump that chat says took him 5 minutes.",
+   "hooks": [
+    "It took him 5 minutes to jump a fence",
+    "3, 2, 1... here we go",
+    "Chat watching him jump a gate"
+   ],
+   "hook_text": "3, 2, 1... here we go",
+   "punchline_ts": 7004.8,
+   "mood": "wholesome",
+   "outro_type": "reaction_zoom",
+   "reaction_ts": 7005.0,
+   "outro_text": "and he's over!",
+   "angle": "gate jump",
+   "violence_early_risk": false,
+   "keep": true,
+   "spoiler_risk": false,
+   "reason": "Approved by Arjun on the review page, 2026-11-23 (final version settings baked in)."
+  },
+  {
+   "candidate_rank": 15,
+   "score": 6,
+   "start": 1883.5,
+   "end": 1911.0,
+   "summary": "Game tells him to press L3 to run: 'Where's L3? I don't have L3'.",
+   "hooks": [
+    "'I don't have L3'",
+    "Day 1 of a PC player on controller",
+    "The game said press L3. He panicked."
+   ],
+   "hook_text": "'I don't have L3'",
+   "punchline_ts": 1894.6,
+   "mood": "shock",
+   "outro_type": "reaction_freeze",
+   "reaction_ts": 1894.7,
+   "outro_text": "controller diff",
+   "angle": "controller struggle",
+   "violence_early_risk": false,
+   "keep": true,
+   "spoiler_risk": false,
+   "reason": "Approved by Arjun on the review page, 2026-11-23 (final version settings baked in)."
+  },
+  {
+   "candidate_rank": 13,
+   "score": 6,
+   "start": 3138.5,
+   "end": 3188.5,
+   "summary": "Shootout panic: 'How do I heal? I need help!', then 'I just need to learn these binds'.",
+   "hooks": [
+    "Fortnite habits don't work in GTA 6",
+    "How do I heal?!",
+    "They full boxed me bro"
+   ],
+   "hook_text": "Fortnite habits don't work in GTA 6",
+   "punchline_ts": 3150.5,
+   "mood": "fail",
+   "outro_type": "reaction_replay",
+   "reaction_ts": 3155.1,
+   "outro_text": "binds: in progress",
+   "angle": "controller struggle",
+   "violence_early_risk": true,
+   "keep": true,
+   "spoiler_risk": false,
+   "reason": "Approved by Arjun on the review page, 2026-11-23 (final version settings baked in)."
+  }
+ ]
+}

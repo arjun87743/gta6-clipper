@@ -1,0 +1,181 @@
+{
+ "assets": [
+  {
+   "id": "whoosh_soft",
+   "kind": "sfx",
+   "file": "sfx/whoosh_soft.wav",
+   "role": "hook",
+   "moods": [],
+   "gain": 0.7,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "whoosh_sharp",
+   "kind": "sfx",
+   "file": "sfx/whoosh_sharp.wav",
+   "role": "hook",
+   "moods": [],
+   "gain": 0.65,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "whoosh_low",
+   "kind": "sfx",
+   "file": "sfx/whoosh_low.wav",
+   "role": "hook",
+   "moods": [],
+   "gain": 0.75,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "boom",
+   "kind": "sfx",
+   "file": "sfx/boom.wav",
+   "role": "punchline",
+   "moods": [
+    "fail",
+    "shock"
+   ],
+   "gain": 0.55,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "record_scratch",
+   "kind": "sfx",
+   "file": "sfx/record_scratch.wav",
+   "role": "punchline",
+   "moods": [
+    "fail",
+    "funny"
+   ],
+   "gain": 0.8,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "boing",
+   "kind": "sfx",
+   "file": "sfx/boing.wav",
+   "role": "punchline",
+   "moods": [
+    "funny"
+   ],
+   "gain": 0.65,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "sting",
+   "kind": "sfx",
+   "file": "sfx/sting.wav",
+   "role": "punchline",
+   "moods": [
+    "shock"
+   ],
+   "gain": 0.6,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "fanfare",
+   "kind": "sfx",
+   "file": "sfx/fanfare.wav",
+   "role": "punchline",
+   "moods": [
+    "hype"
+   ],
+   "gain": 0.65,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "ding",
+   "kind": "sfx",
+   "file": "sfx/ding.wav",
+   "role": "punchline",
+   "moods": [
+    "wholesome"
+   ],
+   "gain": 0.75,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "sad_trombone",
+   "kind": "sfx",
+   "file": "sfx/sad_trombone.wav",
+   "role": "outro",
+   "moods": [],
+   "gain": 0.5,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "rimshot",
+   "kind": "sfx",
+   "file": "sfx/rimshot.wav",
+   "role": "outro",
+   "moods": [
+    "funny"
+   ],
+   "gain": 0.6,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "outro_boom",
+   "kind": "sfx",
+   "file": "sfx/outro_boom.wav",
+   "role": "outro",
+   "moods": [
+    "shock"
+   ],
+   "gain": 0.6,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "airhorn",
+   "kind": "sfx",
+   "file": "sfx/airhorn.wav",
+   "role": "outro",
+   "moods": [
+    "hype"
+   ],
+   "gain": 0.6,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "chime",
+   "kind": "sfx",
+   "file": "sfx/chime.wav",
+   "role": "outro",
+   "moods": [
+    "wholesome",
+    "fail"
+   ],
+   "gain": 0.5,
+   "licence": "own-work",
+   "source": "synthesised by pipeline/make_assets.py"
+  },
+  {
+   "id": "streamer_reaction",
+   "kind": "reaction",
+   "file": null,
+   "moods": [
+    "funny",
+    "fail",
+    "shock",
+    "hype",
+    "wholesome"
+   ],
+   "licence": "campaign-footage",
+   "source": "the named streamer's facecam, cut from the same clip at render time"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+name: Post clips
+
+# Hourly. The code only posts inside the hours set in campaigns/asianjeff.yaml (autopost),
+# up to the daily cap, with a minimum gap between posts on each platform.
+on:
+  schedule:
+    - cron: "3 * * * *"
+  workflow_dispatch:
+    inputs:
+      now:
+        description: "Post one clip now, ignoring the posting hours"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+  actions: read     # download clips saved by the process runs
+
+concurrency:
+  group: clipper-state
+  cancel-in-progress: false
+
+env:
+  CAMPAIGN: asianjeff
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load state
+        run: bash scripts/state.sh pull
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: requirements-cloud.txt
+
+      - name: Install
+        run: pip install -q pyyaml requests cryptography google-api-python-client google-auth numpy
+
+      - name: Post what is due
+        env:
+          CLIPPER_POST_NOW: ${{ inputs.now && '1' || '' }}
+          STATE_KEY: ${{ secrets.STATE_KEY }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+        run: |
+          python pipeline/cloud.py post --campaign "$CAMPAIGN"
+          python pipeline/cloud.py status --campaign "$CAMPAIGN"
+
+      - name: Save state
+        if: always()
+        run: bash scripts/state.sh push "post (run ${{ github.run_id }})"

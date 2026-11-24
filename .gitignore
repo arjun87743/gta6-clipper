@@ -1,0 +1,27 @@
+# PUBLIC REPO: code only. Never commit media, downloads, tokens or personal tracking data.
+.env
+*.env
+secrets/
+token*.json
+client_secret*.json
+data/
+output/
+segments/
+frames/
+sheets/
+bin/
+assets/sfx/
+*.mp4
+*.mkv
+*.ts
+*.wav
+*.npy
+*.npz
+__pycache__/
+.DS_Store
+*.bak-*
+review/decisions.json
+review/log.jsonl
+review/feedback_queue.jsonl
+review/render_logs/
+tracking/
