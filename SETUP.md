@@ -44,14 +44,13 @@ https://support.google.com/youtube/contact/yt_api_form
 
 ## 4. Instagram: `IG_USER_ID`, `IG_TOKEN`
 @asianjeffvaultclips must stay a Creator or Business account (it is).
-1. https://developers.facebook.com/apps : Create app > use case "Other" > type **Business**.
-2. Add the product **Instagram** > "API setup with Instagram login".
-3. Under "Generate access tokens", Add account and log in as @asianjeffvaultclips.
-   Allow the permissions it asks for (it needs `instagram_business_basic` and
-   `instagram_business_content_publish`).
-4. Copy the **Instagram user ID** shown there as `IG_USER_ID`, and Generate token as `IG_TOKEN`.
-The app can stay in development mode since it only posts to your own account. The token lasts
-60 days; the runs refresh it automatically every week.
+New Meta apps use "API setup with Unified login": a system-user token that never expires.
+1. https://developers.facebook.com/apps : Create app "clipper", use case "Manage messaging & content
+   on Instagram", then connect a business portfolio (ours: "AsianJeff Vault").
+2. Use cases > Customize > API setup with Unified login: create a configuration (system-user token,
+   Instagram account asset, `instagram_basic` + `instagram_content_publish`) and register a redirect URL.
+3. Add the Instagram account and generate the token. Copy the Instagram account ID as `IG_USER_ID`
+   and the token as `IG_TOKEN`.
 
 ## 5. Post the 8 clips you already approved
 GitHub > Actions > **Process new streams** > Run workflow:

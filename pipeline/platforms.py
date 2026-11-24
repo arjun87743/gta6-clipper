@@ -3,8 +3,10 @@
 YouTube  (YouTube Data API v3): secrets YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN.
          Get the refresh token once with scripts/youtube_token.py. Videos uploaded by an app that
          has not passed Google's API audit are locked to private; post() reports that.
-Instagram (Instagram API with Instagram Login): secrets IG_USER_ID and IG_TOKEN (long-lived,
-         60 days). The token is refreshed automatically and the new one kept in the vault.
+Instagram: secrets IG_USER_ID and IG_TOKEN. Default is Meta's "Unified login" setup (the only
+         one new apps get, 2026): a system-user token that never expires, used on graph.facebook.com.
+         Older apps with "Instagram login" can set IG_GRAPH_HOST=https://graph.instagram.com; that
+         token lasts 60 days and is refreshed automatically, the new one kept in the vault.
 X has no free posting API, so it is not here.
 """
 import os
@@ -16,7 +18,8 @@ import requests
 
 from pipeline import state, vault
 
-IG_API = "https://graph.instagram.com/v21.0"
+IG_HOST = os.environ.get("IG_GRAPH_HOST") or "https://graph.facebook.com"
+IG_API = f"{IG_HOST}/v21.0"
 IG_UPLOAD = "https://rupload.facebook.com/ig-api-upload/v21.0"
 
 
@@ -63,10 +66,12 @@ def _ig_token():
     tok = v.get("ig_token") or os.environ.get("IG_TOKEN")
     if not tok:
         raise PostError("IG_TOKEN secret is not set")
+    if "graph.instagram.com" not in IG_HOST:
+        return os.environ.get("IG_TOKEN") or tok  # system-user token: never expires, nothing to refresh
     last = v.get("ig_refreshed_at")
     # Long-lived tokens last 60 days; refresh after 7 so a few missed runs never let it expire.
     if not last or state.now() - state.parse(last) > timedelta(days=7):
-        r = requests.get(f"{IG_API.rsplit('/', 1)[0]}/refresh_access_token",
+        r = requests.get(f"{IG_HOST}/refresh_access_token",
                          params={"grant_type": "ig_refresh_token", "access_token": tok}, timeout=30)
         if r.ok and r.json().get("access_token"):
             tok = r.json()["access_token"]
@@ -93,6 +98,7 @@ def instagram_post(video, caption):
     tok = _ig_token()
     c = _ig("POST", f"{uid}/media", tok, data={"media_type": "REELS", "upload_type": "resumable",
                                                "caption": caption[:2200], "share_to_feed": "true"})
+    # Resumable upload goes to rupload.facebook.com for both API setups.
     cid = c["id"]
     size = Path(video).stat().st_size
     with open(video, "rb") as f:
