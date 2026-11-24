@@ -38,8 +38,13 @@ def call_claude(prompt, cwd):
         raise RuntimeError("claude CLI not found (npm install -g @anthropic-ai/claude-code)")
     if not (os.environ.get("CLAUDE_CODE_OAUTH_TOKEN") or os.environ.get("ANTHROPIC_API_KEY")):
         raise RuntimeError("set CLAUDE_CODE_OAUTH_TOKEN (claude setup-token) as a GitHub secret")
+    env = dict(os.environ)
+    for k in ("CLAUDE_CODE_OAUTH_TOKEN", "ANTHROPIC_API_KEY"):
+        if env.get(k):
+            env[k] = "".join(env[k].split())  # a pasted secret can carry line breaks or spaces
     p = subprocess.run([exe, "-p", prompt, "--allowedTools", "Read,Write", "--max-turns", "12",
-                        "--output-format", "text"], cwd=cwd, capture_output=True, text=True, timeout=1500)
+                        "--output-format", "text"], cwd=cwd, env=env, capture_output=True, text=True,
+                       timeout=1500)
     if p.returncode != 0:
         raise RuntimeError(f"claude failed ({p.returncode}): {(p.stderr or p.stdout)[-1500:]}")
     return p.stdout
