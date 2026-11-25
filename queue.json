@@ -217,5 +217,33 @@
    }
   },
   "posts": {}
+ },
+ {
+  "clip_id": "asianjeff_2935496287_c03",
+  "vod_id": "2935496287",
+  "campaign": "asianjeff",
+  "run_id": "45521427676",
+  "file": "asianjeff_2935496287_c03.mp4",
+  "score": 6,
+  "angle": "driving fail",
+  "summary": "Streamer takes a motorcycle, panics, goes the wrong way and jokes about trusting the GPS",
+  "hook": "Driving a motorcycle is actually dangerous",
+  "duration_s": 36.0,
+  "added_at": "2026-11-25T01:10:06+00:00",
+  "pending": [
+   "instagram",
+   "youtube_shorts"
+  ],
+  "texts": {
+   "instagram": {
+    "title": "",
+    "text": "Driving a motorcycle is actually dangerous @asianjeff\n\n#ad #AsianJeff #gta6 #gta6clips #gaming"
+   },
+   "youtube_shorts": {
+    "title": "Driving a motorcycle is actually dangerous #ad",
+    "text": "Driving a motorcycle is actually dangerous @asianjeff\n#ad #AsianJeff #gta6 #gta6clips #gaming #shorts"
+   }
+  },
+  "posts": {}
  }
 ]
