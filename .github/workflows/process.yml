@@ -2,8 +2,9 @@ name: Process new streams
 
 # Every 2 hours: look for a new AsianJeff GTA 6 VOD, cut and edit the best moments, queue them.
 on:
-  schedule:
-    - cron: "25 */2 * * *"
+  # Paused 2026-11-25: AsianJeff campaign is out of budget. Restore to resume:
+  # schedule:
+  #   - cron: "25 */2 * * *"
   workflow_dispatch:
     inputs:
       vod_id:

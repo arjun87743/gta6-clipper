@@ -3,8 +3,9 @@ name: Post clips
 # Hourly. The code only posts inside the hours set in campaigns/asianjeff.yaml (autopost),
 # up to the daily cap, with a minimum gap between posts on each platform.
 on:
-  schedule:
-    - cron: "9 * * * *"
+  # Paused 2026-11-25: AsianJeff campaign is out of budget. Restore to resume:
+  # schedule:
+  #   - cron: "9 * * * *"
   workflow_dispatch:
     inputs:
       now:
