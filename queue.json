@@ -39,10 +39,7 @@
   "hook": "Me and Jason are so alike",
   "duration_s": 32.3,
   "added_at": "2026-11-24T10:07:26+00:00",
-  "pending": [
-   "instagram",
-   "youtube_shorts"
-  ],
+  "pending": [],
   "texts": {
    "instagram": {
     "title": "",
@@ -53,7 +50,10 @@
     "text": "Me and Jason are so alike | asianjeff plays GTA 6 @asianjeff\n#ad #AsianJeff #gta6 #gta6clips #gaming #shorts"
    }
   },
-  "posts": {}
+  "posts": {
+   "youtube_shorts": "https://www.youtube.com/shorts/md4mSFnj7o8",
+   "instagram": "https://www.instagram.com/reel/DgJZ_cDIThh/"
+  }
  },
  {
   "clip_id": "asianjeff_2933231152_c01",
